@@ -26,155 +26,43 @@ class _FirstscreenState extends State<Firstscreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 60),
-              child: Text(
-                "Millions of songs.\nFree on spotify.",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
+              child: UiHelper.customText("Millions of songs.\nFree on spotify.",Colors.white,30,FontWeight.bold,TextAlign.center),
             ),
             SizedBox(
               height: 30,
             ),
             Center(
-              child:
-                  // ElevatedButton(
-                  //   onPressed: () {},
-                  //   child: Text(
-                  //     "Sign up free",
-                  //     style:
-                  //         TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  //   ),
-                  //   style: ElevatedButton.styleFrom(
-                  //       shape: RoundedRectangleBorder(
-                  //           borderRadius: BorderRadius.circular(25)),
-                  //       backgroundColor: Colors.greenAccent.shade400,
-                  //       foregroundColor: Colors.black),
-                  // ),
-                  UiHelper.customButton("Sign up free", 20, FontWeight.bold, 25, Colors.greenAccent.shade400, Colors.black,60,350),
+              child: UiHelper.customButton("Sign up free", 20, FontWeight.bold, 25, Colors.greenAccent.shade400, Colors.black,60,350),
               ),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30,),
             Center(
               child: SizedBox(
                 height: 60,
                 width: 350,
-                child:
-                UiHelper.customRowButton("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png", 15, 12, 20, "Continue with Google", 20, FontWeight.bold, Colors.white, 25, 1.0, Colors.white)
-                // OutlinedButton(
-                //   onPressed: () {},
-                //   child: Row(children: [
-                //     Padding(
-                //       padding: const EdgeInsets.symmetric(
-                //           vertical: 15, horizontal: 12),
-                //       child: Image.network(
-                //           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"),
-                //       // Image.asset("assets/images/google.png",height: 50,width: 80,),
-                //     ),
-                //     SizedBox(
-                //       width: 20,
-                //     ),
-                //     Text("Continue with Google",
-                //         style: TextStyle(
-                //             fontSize: 20,
-                //             fontWeight: FontWeight.bold,
-                //             color: Colors.white)),
-                //   ]),
-                //   // Image.network("https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png"),
-                //   style: OutlinedButton.styleFrom(
-                //     shape: RoundedRectangleBorder(
-                //         borderRadius: BorderRadius.circular(25)),
-                //     side: BorderSide(width: 1.0, color: Colors.white),
-                //   ),
-                // ),
+                child: UiHelper.customRowButton("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png", "Continue with Google", 15, 12, 20, 20, FontWeight.bold, Colors.white, 25, 1.0, Colors.white),
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30,),
             Center(
               child: SizedBox(
                 height: 60,
                 width: 350,
-                child:
-                    // UiHelper.CustomButton((){}, "https://1000logos.net/wp-content/uploads/2017/02/Facebook-Logosu.png", "Continue with Facebook",
-                    //     25, backgroundcolor, foregroundColor, fontweight, fontsize, horizontal, vertical, width),
-                    OutlinedButton(
-                  onPressed: () {},
-                  child: Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: Image.network(
-                          "https://1000logos.net/wp-content/uploads/2017/02/Facebook-Logosu.png"),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text("Continue with Facebook",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white)),
-                  ]),
-                  // Image.network("https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png"),
-                  style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)),
-                    side: BorderSide(width: 1.0, color: Colors.white),
-                  ),
-                ),
+                child: UiHelper.customRowButton("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png", "Continue with Facebook", 15, 12, 20, 20, FontWeight.bold, Colors.white, 25, 1.0, Colors.white),
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30,),
             Center(
               child: SizedBox(
                 height: 60,
                 width: 350,
-                child: OutlinedButton(
-                  onPressed: () {},
-                  child: Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 12, horizontal: 15),
-                      child: Image.network(
-                          "https://pngimg.com/d/apple_logo_PNG19680.png"),
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text("Continue with Apple",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white)),
-                  ]),
-                  style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)),
-                    side: BorderSide(width: 1.0, color: Colors.white),
-                  ),
-                ),
+                child: UiHelper.customRowButton("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png","Continue with Apple", 15, 12, 20,  20, FontWeight.bold, Colors.white, 25, 1.0, Colors.white),
               ),
             ),
-            SizedBox(
-              height: 40,
-            ),
+            SizedBox(height: 30,),
             Center(
-              child: TextButton(
-                child: Text("Log in",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25)),
-                onPressed: () {},
-              ),
+              child: UiHelper.customTextButton("Log in",Colors.white,FontWeight.bold,25),
             ),
+
           ]),
       backgroundColor: Colors.black,
     );

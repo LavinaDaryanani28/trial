@@ -29,7 +29,7 @@ class _SigninState extends State<Signin> {
                   children: [
                     Image.network("https://play-lh.googleusercontent.com/7ynvVIRdhJNAngCg_GI7i8TtH8BqkJYmffeUHsG-mJOdzt1XLvGmbsKuc5Q1SInBjDKN=w240-h480-rw",height: 80,width: 80,),
                     SizedBox(width: 10,),
-                    Text("Spotify",style: TextStyle(color: Colors.white,fontSize: 40,)),
+                    UiHelper.customText("Spotify",Colors.white,40),
                   ],
             ),
             SizedBox(height: 50,),

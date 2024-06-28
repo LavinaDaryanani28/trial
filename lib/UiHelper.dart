@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 class UiHelper {
   static customButton(
-    String text,
-    double fontsize,
-    FontWeight fontweight,
-    double borderradius,
-    Color bgcolor,
-    Color forecolor, [
+    String text, [
+    double? fontsize,
+    FontWeight? fontweight,
+    double? borderradius,
+    Color? bgcolor,
+    Color? forecolor,
     double? height,
     double? width,
     VoidCallback? callback,
   ]) {
     return SizedBox(
-      height: height != null ? height : null,
-      width: width != null ? width : null,
+      height: height,
+      width: width,
       child: ElevatedButton(
         onPressed: () {
           // callback();
@@ -25,87 +25,61 @@ class UiHelper {
         ),
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderradius)),
+              borderRadius: BorderRadius.circular(
+                  borderradius != null ? borderradius : 0.0)),
           backgroundColor: bgcolor,
           foregroundColor: forecolor,
         ),
       ),
     );
   }
-  static customRowButton(String imgpath,double vpadding, double hpadding,double sizeboxwidth,String text,double fontsize,FontWeight fontweight,Color txtcolor,double borderradius,double bordersidewidth, Color bordercolor){
+
+  static customRowButton(
+      String imgpath,
+      String text,
+      [double? vpadding,
+      double? hpadding,
+      double? sizeboxwidth,
+      double? fontsize,
+      FontWeight? fontweight,
+      Color? txtcolor,
+      double? borderradius,
+      double? bordersidewidth,
+      Color? bordercolor,
+      VoidCallback? callback]) {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: () {
+        // callback();
+      },
       child: Row(children: [
         Padding(
-          padding: EdgeInsets.symmetric(
-              vertical: vpadding, horizontal: hpadding),
+          padding:
+              EdgeInsets.symmetric(vertical: vpadding!, horizontal: hpadding!),
           child: Image.network(imgpath),
         ),
-        customSizebox(sizeboxwidth),
+        customSizebox(width: sizeboxwidth),
         Text(text,
             style: TextStyle(
-                fontSize: fontsize,
-                fontWeight: fontweight,
-                color: txtcolor)),
+                fontSize: fontsize, fontWeight: fontweight, color: txtcolor)),
       ]),
       style: OutlinedButton.styleFrom(
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderradius)),
-        side: BorderSide(width: bordersidewidth, color: bordercolor),
+            borderRadius: BorderRadius.circular(borderradius!)),
+        side: BorderSide(width: bordersidewidth!, color: bordercolor!),
       ),
     );
   }
-  static customSizebox([double? width=0]){
+
+  static customSizebox({double? width, double? height}) {
     return SizedBox(
-      // height: height,
+      height: height,
       width: width,
     );
   }
-  // OutlinedButton(
-  // onPressed: () {},
-  // child: Row(children: [
-  // Padding(
-  // padding: const EdgeInsets.symmetric(
-  // vertical: 15, horizontal: 12),
-  // child: Image.network(
-  // "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"),
-  // // Image.asset("assets/images/google.png",height: 50,width: 80,),
-  // ),
-  // SizedBox(
-  // width: 20,
-  // ),
-  // Text("Continue with Google",
-  // style: TextStyle(
-  // fontSize: 20,
-  // fontWeight: FontWeight.bold,
-  // color: Colors.white)),
-  // ]),
-  // // Image.network("https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png"),
-  // style: OutlinedButton.styleFrom(
-  // shape: RoundedRectangleBorder(
-  // borderRadius: BorderRadius.circular(25)),
-  // side: BorderSide(width: 1.0, color: Colors.white),
-  // ),
-  // ),
 
-  // static CustomButton(VoidCallback callback,String text,double radius,String imagePath,FontWeight fontweight,double fontsize,double width,[Color? backgroundcolor,Color? foregroundColor,double? h,double? v]){
-  //   return OutlinedButton(onPressed:(){callback();} ,
-  //     child:Row(children: [
-  //     Padding(
-  //     padding: const EdgeInsets.symmetric(vertical: 12,horizontal: 15),
-  //       child:
-  //       Image.network(imagePath)),
-  //       SizedBox(width: 20,),
-  //       Text(text,style: TextStyle(fontSize: fontsize,fontWeight:fontweight),)],),
-  //     style: OutlinedButton.styleFrom( shape: RoundedRectangleBorder(
-  //     borderRadius: BorderRadius.circular(radius),
-  //   ),
-  //         backgroundColor: backgroundcolor,foregroundColor: foregroundColor),
-  //   );
-  // }
   static customTextField(TextEditingController controller, String text,
-      IconData icondata, Color color,
-      [bool? password]) {
+      [IconData? icondata, Color? color,
+      bool? password]) {
     return TextField(
       controller: controller,
       obscureText: password != null ? password : false,
@@ -120,12 +94,29 @@ class UiHelper {
     );
   }
 
-  static customText(String text, Color color, double fontsize,
-      [FontWeight? fontweight]) {
+  static customText(String text, [Color? color, double? fontsize,
+      FontWeight? fontweight,TextAlign? textalign]) {
     return Text(
       text,
       style:
           TextStyle(fontSize: fontsize, color: color, fontWeight: fontweight),
+      textAlign: textalign,
     );
+  }
+
+  static customTextButton(String text,
+      [Color? color,
+      FontWeight? fontweight,
+      double? fontsize,
+      VoidCallback? callback]) {
+    return TextButton(
+        onPressed: () {
+          // callback();
+        },
+        child: Text(text,
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: fontweight,
+                fontSize: fontsize)));
   }
 }
